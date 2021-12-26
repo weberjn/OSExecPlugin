@@ -21,9 +21,9 @@ package de.jwi.jspwiki.plugins;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.wiki.WikiContext;
+import org.apache.wiki.api.core.Context;
 import org.apache.wiki.api.exceptions.PluginException;
-import org.apache.wiki.api.plugin.WikiPlugin;
+import org.apache.wiki.api.plugin.Plugin;
 import org.zeroturnaround.exec.ProcessExecutor;
 
 import edu.rice.cs.util.ArgumentTokenizer;
@@ -36,8 +36,8 @@ import edu.rice.cs.util.ArgumentTokenizer;
  * </p>
  * commandline
  */
-public class OSExecPlugin implements WikiPlugin {
-	public String execute(WikiContext context, Map<String, String> params) throws PluginException {
+public class OSExecPlugin implements Plugin {
+	public String execute(Context context, Map<String, String> params) throws PluginException {
 		try {
 			String commandline = params.get("commandline");
 			String systemproperty = params.get("systemproperty");
